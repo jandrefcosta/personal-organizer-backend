@@ -29,7 +29,7 @@ app.register(healthRoutes)
 // app.register(expensesRoutes)
 
 
-app.listen({ port: 3003, }, function (err, address) {
+app.listen({ port: 3003, host: '0.0.0.0' }, function (err, address) {
   if (err) {
     app.log.error(err)
     process.exit(1)
