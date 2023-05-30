@@ -27,6 +27,6 @@ app.register(categoryRoutes)
 app.register(expensesRoutes)
 
 
-app.listen({ port: 3333, }).then(() => {
-  console.log('server running port: 3333')
+app.listen({ port: 5055, }).then(() => {
+  console.log('server running port: 5055')
 })
