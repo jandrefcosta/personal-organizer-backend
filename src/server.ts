@@ -11,7 +11,9 @@ import cors from '@fastify/cors'
 // import { categoryRoutes } from './routes/category';
 import { healthRoutes } from './routes/health';
 
-const app = fastify();
+const app = fastify({
+  logger: true
+});
 
 app.register(cors, { origin: true })
 //app.register(jwt, { secret: 'spacetime' })
@@ -27,6 +29,10 @@ app.register(healthRoutes)
 // app.register(expensesRoutes)
 
 
-app.listen({ port: 8080, }).then(() => {
-  console.log('server running port: 8080')
+app.listen({ port: 3003, }, function (err, address) {
+  if (err) {
+    app.log.error(err)
+    process.exit(1)
+  }
+  // Server is now listening on ${address}
 })
